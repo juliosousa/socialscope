@@ -86,5 +86,8 @@ DEPENDENCIES
   padrino (= 0.13.2)
   rake
 
+RUBY VERSION
+   ruby 2.4.0p0
+
 BUNDLED WITH
    1.14.6

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.0'
+
 # Padrino supports Ruby version 1.9 and later
 # ruby '2.3.0'
 
