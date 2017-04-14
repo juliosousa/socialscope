@@ -44,7 +44,7 @@ Socialscopeme::App.controllers :fetch do
     render 'fetch/index'
   end
 
-  post '/' do
+  post :index do
     # @page = Post.new(params[:page])
     # halt 422, serialize(search) unless search.save
 
@@ -66,19 +66,15 @@ Socialscopeme::App.controllers :fetch do
     # csv = CSV.new(open("files/2017/links_#{@link_page}.csv", 'wb'))
     # csv << %w(CREATED LINK LIKES COMMENTS)
 
-
     @count = 0
 
     #TODO: Criar um atenticador para API do Facebook
     @graph = Koala::Facebook::API.new("EAACEdEose0cBAMxdV1XU3SZA8ZCNHnZB25oyT5vCIqlbwcUmb8Vv6bMs1O82Wa0G0BRxgrVIcmiZA6tAyswHAeLOJ4s0X8jZC0mtKoqcGnfkZANPGIGfCc73SN1ofwUPGmFRnZAjZAhmZB6eOKt21onYVvwJQ5cG04tVq66OwRC5ydtGhQ5JGbXVa7ytFKfIfL9MZD")
 
-
     page = @graph.get_connection(@link_page, 'posts',{
         limit: 99,
         fields: ['likes.limit(0).summary(true)','comments.limit(0).summary(true)']
     })
-
-
 
     until page.next_page.nil?
       page.each do |photo|
