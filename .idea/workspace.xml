@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5439ee15-6821-4b00-b47d-09f274bfffd5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/socialscopeme.iml" afterPath="$PROJECT_DIR$/.idea/socialscopeme.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/fetch.rb" afterPath="$PROJECT_DIR$/app/controllers/fetch.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/base/index.haml" afterPath="$PROJECT_DIR$/app/views/base/index.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/creative.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/creative.min.css" />
-    </list>
+    <list default="true" id="5439ee15-6821-4b00-b47d-09f274bfffd5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -565,12 +556,12 @@
       <workItem from="1491759650900" duration="58000" />
       <workItem from="1491768787912" duration="67000" />
       <workItem from="1492130012941" duration="652000" />
-      <workItem from="1492130698089" duration="14070000" />
+      <workItem from="1492130698089" duration="14378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14847000" />
+    <option name="totallyTimeSpent" value="15155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
