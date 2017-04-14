@@ -4,6 +4,11 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+.url{
+    color: black;
+    border-color: transparent;
+    border-radius: 5px;
+}
 .navbar-default,
 a {
     -webkit-transition: all .35s;

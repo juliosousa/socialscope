@@ -1,18 +1,22 @@
 %header
   .header-content
     .header-content-inner
-      %h1#homeHeading Your Favorite Source of Free Bootstrap Themes
+      %h1#homeHeading As redes sociais são minas de informação e conhecimento
       %hr/
-      %p Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!
-      %a.btn.btn-primary.btn-xl.page-scroll{:href => "index.html#about"} Find Out More
+      %p Nós fornecemos uma ferramenta simples e inteligente para você mesmo minerar tudo que precisa.
+      %a.btn.btn-primary.btn-xl.page-scroll{:href => "index.html#about"} Saiba Mais
 %section#about.bg-primary
   .container
     .row
       .col-lg-8.col-lg-offset-2.text-center
-        %h2.section-heading We've got what you need!
+        %h2.section-heading Experimente
         %hr.light/
-        %p.text-faded Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!
-        %a.page-scroll.btn.btn-default.btn-xl.sr-button{:href => "index.html#services"} Get Started!
+        %p.text-faded Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
+        %form{:method => "post"}
+          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :require => true}
+            %br/
+            %br/
+          %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
 %section#services
   .container
     .row
