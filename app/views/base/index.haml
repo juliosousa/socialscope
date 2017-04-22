@@ -13,7 +13,7 @@
         %hr.light/
         %p.text-faded Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
         %form{:method => "get"}
-          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :require => 'true', :placeholder => "https://www.facebook.com/projetomedicina"}
+          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :required => true, :placeholder => "https://www.facebook.com/projetomedicina"}
           %br/
           %br/
           %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
