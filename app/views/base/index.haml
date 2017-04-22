@@ -12,8 +12,8 @@
         %h2.section-heading Experimente
         %hr.light/
         %p.text-faded Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
-        %form{:method => "post"}
-          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :require => true}/
+        %form{:method => "get"}
+          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :require => true}
           %br/
           %br/
           %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
