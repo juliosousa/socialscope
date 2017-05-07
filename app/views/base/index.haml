@@ -12,11 +12,14 @@
         %h2.section-heading Experimente
         %hr.light/
         %p.text-faded Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
-        %form{:method => "get"}
-          %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :required => true, :placeholder => "https://www.facebook.com/projetomedicina"}
+        -# %form{:method => "post", :action => url(:fetch, :index)}
+        = form_tag url(:fetch,:index),:novalidate=>true do
+          =text_field_tag :url, :value => params[:url], :class => 'col-md-12 url', :required => true, :placeholder => "https://www.facebook.com/projetomedicina"
+          -# %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :required => true, :placeholder => "https://www.facebook.com/projetomedicina"}
           %br/
           %br/
-          %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
+          =submit_tag('Get Social Scope!', :class => 'btn btn-primary btn-xl page-scroll')
+          -# %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
 -#%section#services
 -#  .container
 -#    .row

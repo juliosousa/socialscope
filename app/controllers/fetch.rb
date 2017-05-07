@@ -1,6 +1,12 @@
 Socialscopeme::App.controllers :fetch do
   
-  get :index, map: 'fetch/:page' do
+  post :index do
+
+    ap params
+    
+    
+    break 
+
     agent = Mechanize.new
 
     ##Colocar apenas o nome da página
