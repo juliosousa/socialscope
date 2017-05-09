@@ -2,10 +2,10 @@ Socialscopeme::App.controllers :fetch do
 
   post :index do
 
-    ap params
+    #ap params
 
 
-    break
+    #break
 
     agent = Mechanize.new
 
