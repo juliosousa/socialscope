@@ -1,0 +1,32 @@
+%section#page-breadcrumb
+  .vertical-center.sun
+    .container
+      .row
+        .action
+          .col-sm-12{:style=>"text-align: center"}
+            %h1.title Criar uma conta gratuita
+            %p é fácil e rápido.
+/ /#page-breadcrumb
+%br
+%br
+%section
+  .container
+    .row
+      .p{:style=>'text-align: center'}
+        %a{:href=>'#', 'onclick'=>'fb_login();'}
+          %img.img-responsive.inline{:alt => "Logar com Facebook", :src => image_path('signup-facebook.png'), :width => '360px'}
+    -#%hr
+    %br
+    .h4{:style=>'text-align: center'}
+      ou preencha os dados abaixo:
+  .container
+    .row
+      .action
+        .col-md-2
+        .col-md-2.hidden-xs.hidden-sm
+        .col-md-6
+          .col-md-8{:style=>'margin-left: -5px'}
+            =[:success, :danger, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe
+          .form-group
+            =form_for :usuario, url(:usuario, :create), :class => 'form-horizontal', :name=>'formCadastro' do |f|
+              =partial 'forms/cadastro', :locals => { :f => f }

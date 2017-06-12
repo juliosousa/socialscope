@@ -22,10 +22,15 @@ class Account
 
   # Callbacks
   before_save :encrypt_password, :if => :password_required
-
+  before_save :email_to_downcase
   ##
   # This method is for authentication purpose.
   #
+
+  def email_to_downcase
+    self.email = self.email.downcase
+  end
+
   def self.authenticate(email, password)
     account = where(:email => /#{Regexp.escape(email)}/i).first if email.present?
     account && account.has_password?(password) ? account : nil

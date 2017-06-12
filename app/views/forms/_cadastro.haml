@@ -1,0 +1,66 @@
+.col-xs-12{:style => "padding-right: 30px;"}
+  - error = @usuario.errors.include?(:name)
+  .form-group
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      .controls
+        %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : ''
+        .input-group
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-user
+          =f.text_field :name, :class => 'form-control input-lg form-item-fullname', :placeholder => 'Nome e sobrenome'
+
+  - error = @aluno.errors.include?(:email)
+  -if request.path_info.split('/')[1] == 'editar-perfil'
+    .form-group
+      %fieldset.control-group{:class => error ? 'has-error' : ''}
+        .controls
+          %span.help-inline=error ? f.error_message_on(:email, :class => 'text-error') : ''
+          .input-group
+            %span.input-group-addon
+              %i.glyphicon.glyphicon-envelope
+            =f.text_field :email, :class => 'form-control input-lg', :disabled => true
+  -else
+    .form-group
+      %fieldset.control-group{:class => error ? 'has-error' : ''}
+        .controls
+          %span.help-inline=error ? f.error_message_on(:email, :class => 'text-error') : ''
+          .input-group
+            %span.input-group-addon
+              %i.glyphicon.glyphicon-envelope
+            =f.text_field :email, :class => 'form-control input-lg', :placeholder => 'E-mail'
+
+  - error = @aluno.errors.include?(:password)
+  .form-group
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      .controls
+        %span.help-inline=error ? f.error_message_on(:password, :class => 'text-error') : ''
+        .input-group
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-lock
+          =f.password_field :password, :class => 'form-control input-lg', :placeholder => 'Senha'
+
+  - error = @aluno.errors.include?(:permite_newsletter)
+  .form-group
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      / =f.label :pseudonimo, :class => 'control-label'
+      .controls
+        =f.check_box :permite_newsletter, :class => 'checkbox inline', :checked => true
+        %span.help-inline=error ? f.error_message_on(:permite_newsletter, :class => 'text-error') : 'Desejo ser informado sobre novos temas e novidades no site.'
+
+
+  -if session[:gclid]
+    =f.text_field :gclid, :type => "hidden", :value => "#{session[:gclid]}"
+
+  - error = @aluno.errors.include?(:aceitou_termos)
+  -if request.path_info.split('/')[1] == 'editar-perfil'
+    .form-actions
+      =f.submit 'Salvar conta', :class => 'btn btn-submit'
+  -else
+    .form-group
+      %fieldset.control-group{:class => error ? 'has-error' : ''}
+        / =f.label :pseudonimo, :class => 'control-label'
+        .controls
+          Ao efetuar o cadastro, você concorda com nosso #{link_to('Termo de uso', '/termo-de-uso', :target=>'_blank')} e com nossa #{link_to('Política de privacidade', '/politica-de-privacidade', :target=>'_blank')}.
+        .form-group
+    .form-actions
+      =f.submit 'Criar conta', :class => 'btn btn-submit', :id=>'efetuandoCadastro'

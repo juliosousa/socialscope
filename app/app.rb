@@ -52,7 +52,7 @@ module Socialscopeme
     ##
     # You can manage errors like:
     #
-    #   error 404 do
+    #   error 404 do'
     #     render 'errors/404'
     #   end
     #
