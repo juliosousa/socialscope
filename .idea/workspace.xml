@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5439ee15-6821-4b00-b47d-09f274bfffd5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cadastro/cadastrar.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/forms/_cadastro.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.rb" afterPath="$PROJECT_DIR$/app/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/base/index.haml" afterPath="$PROJECT_DIR$/app/views/base/index.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/account.rb" afterPath="$PROJECT_DIR$/models/account.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/usuario.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/usuario_helper.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -764,7 +757,7 @@
       <workItem from="1496000952180" duration="11853000" />
       <workItem from="1496954404930" duration="5948000" />
       <workItem from="1497008223273" duration="26000" />
-      <workItem from="1497216361495" duration="10567000" />
+      <workItem from="1497216361495" duration="10617000" />
     </task>
     <task id="LOCAL-00001" summary="Correção de links">
       <created>1492148315751</created>
@@ -798,7 +791,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61759000" />
+    <option name="totallyTimeSpent" value="61809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
