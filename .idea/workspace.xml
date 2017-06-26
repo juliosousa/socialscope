@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5439ee15-6821-4b00-b47d-09f274bfffd5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/modal.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +103,7 @@
       <file leaf-file-name="usuario.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/usuario.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="507">
               <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
@@ -807,7 +806,7 @@
       <workItem from="1497474378719" duration="598000" />
       <workItem from="1497493024946" duration="1226000" />
       <workItem from="1498348740283" duration="6126000" />
-      <workItem from="1498413109479" duration="27758000" />
+      <workItem from="1498413109479" duration="27964000" />
     </task>
     <task id="LOCAL-00001" summary="Correção de links">
       <created>1492148315751</created>
@@ -841,7 +840,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97901000" />
+    <option name="totallyTimeSpent" value="98107000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1210,14 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/usuario.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notificacoes/notes.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1278,6 +1269,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="4" column="106341" lean-forward="false" selection-start-line="4" selection-start-column="106341" selection-end-line="4" selection-end-column="106341" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/usuario.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
