@@ -9,6 +9,13 @@ class Usuario < Account
   field :fb_id, :type => String
   field :fb_link, :type => String
 
+
+  # field :name,             :type => String
+  # field :surname,          :type => String
+  # field :email,            :type => String
+  # field :crypted_password, :type => String
+  # field :role,             :type => String
+
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>
 

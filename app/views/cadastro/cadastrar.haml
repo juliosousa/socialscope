@@ -1,32 +1,67 @@
-%section#page-breadcrumb
-  .vertical-center.sun
-    .container
-      .row
-        .action
-          .col-sm-12{:style=>"text-align: center"}
-            %h1.title Criar uma conta gratuita
-            %p é fácil e rápido.
-/ /#page-breadcrumb
-%br
-%br
-%section
-  .container
-    .row
-      .p{:style=>'text-align: center'}
-        %a{:href=>'#', 'onclick'=>'fb_login();'}
-          %img.img-responsive.inline{:alt => "Logar com Facebook", :src => image_path('signup-facebook.png'), :width => '360px'}
-    -#%hr
-    %br
-    .h4{:style=>'text-align: center'}
-      ou preencha os dados abaixo:
-  .container
-    .row
-      .action
-        .col-md-2
-        .col-md-2.hidden-xs.hidden-sm
-        .col-md-6
-          .col-md-8{:style=>'margin-left: -5px'}
-            =[:success, :danger, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe
-          .form-group
-            =form_for :usuario, url(:usuario, :create), :class => 'form-horizontal', :name=>'formCadastro' do |f|
-              =partial 'forms/cadastro', :locals => { :f => f }
+!!!
+%html{:lang => "en"}
+  %head
+
+    %meta{:charset => "utf-8"}/
+    %title SocialScope Cadastro
+    =stylesheet_link_tag 'bootstrap.min', 'font-awesome.min', 'magnific-popup', 'creative.min','cadastro'
+    %script{:src => "http://code.jquery.com/jquery-1.11.1.min.js"}
+
+    %section#cadastro
+      %br
+      %br
+      %br
+      / Google Fonts
+      %link{:href => "https://fonts.googleapis.com/css?family=Passion+One", :rel => "stylesheet", :type => "text/css"}/
+      %link{:href => "https://fonts.googleapis.com/css?family=Oxygen", :rel => "stylesheet", :type => "text/css"}/
+
+      =form_tag url(:usuario, :create), :method => :post do
+        .section-content
+          .section-content-inner
+            .container
+              .row.main
+                .main-login.main-center
+                  %h5 Cadastre-se para obter mais recursos!
+                  .form-group
+                    %label.cols-sm-2.control-label{:for => "name"} Seu nome
+                    .cols-sm-10
+                      .input-group
+                        %span.input-group-addon
+                          %i.fa.fa-user.fa{"aria-hidden" => "true"}
+                        %input#name.form-control{:name => "name", :placeholder => "Seu nome", :type => "text"}/
+                  .form-group
+                    %label.cols-sm-2.control-label{:for => "surname"} Seu sobrenome
+                    .cols-sm-10
+                      .input-group
+                        %span.input-group-addon
+                          %i.fa.fa-user.fa{"aria-hidden" => "true"}
+                        %input#surname.form-control{:name => "surname", :placeholder => "Seu sobrenome", :type => "text"}/
+                  .form-group
+                    %label.cols-sm-2.control-label{:for => "email"} Seu Email
+                    .cols-sm-10
+                      .input-group
+                        %span.input-group-addon
+                          %i.fa.fa-envelope.fa{"aria-hidden" => "true"}
+                        %input#email.form-control{:name => "email", :placeholder => "Seu email", :type => "text"}/
+                  .form-group
+                    %label.cols-sm-2.control-label{:for => "password"} Senha
+                    .cols-sm-10
+                      .input-group
+                        %span.input-group-addon
+                          %i.fa.fa-lock.fa-lg{"aria-hidden" => "true"}
+                        %input#password.form-control{:name => "password", :placeholder => "Insira sua senha", :type => "password"}/
+                  .form-group
+                    %label.cols-sm-2.control-label{:for => "confirm"} Confirma senha
+                    .cols-sm-10
+                      .input-group
+                        %span.input-group-addon
+                          %i.fa.fa-lock.fa-lg{"aria-hidden" => "true"}
+                        %input#password_confirmation.form-control{:name => 'password_confirmation', :placeholder => "Repita seu senha", :type => "password"}/
+                  .form-group
+                    =submit_tag('Cadastrar', :class => 'btn btn-md btn-info', :id=>'liberar')
+
+                    -#%a#button.btn.btn-primary.btn-lg.btn-block.login-button{:href => "http://deepak646.blogspot.in", :target => "_blank", :type => "button"} Cadastrar
+
+                  =javascript_include_tag 'bootstrap.min'
+            / %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"}
+            / Include all compiled plugins (below), or include individual files as needed

@@ -5,13 +5,13 @@
       %hr/
       %p Nós fornecemos uma ferramenta simples e inteligente para você mesmo minerar tudo que precisa.
       %a.btn.btn-primary.btn-xl.page-scroll{:href => "#about"} Saiba mais
-%section#about.bg-primary
-  .container
-    .row
+%section#experimente
+  .section-content
+    .section-content-inner
       .col-lg-8.col-lg-offset-2.text-center
-        %h2.section-heading Experimente
+        %h1 Experimente
         %hr.light/
-        %p.text-faded Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
+        %p Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
         -# %form{:method => "post", :action => url(:fetch, :index)}
         = form_tag url(:fetch,:index),:novalidate=>true do
           =text_field_tag :url, :value => params[:url], :class => 'col-md-12 url', :required => true, :placeholder => "https://www.facebook.com/projetomedicina"

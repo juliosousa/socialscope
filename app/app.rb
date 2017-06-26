@@ -2,8 +2,15 @@ module Socialscopeme
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
-    enable :sessions
+    register Padrino::Admin::AccessControl
 
+
+
+    use Rack::Session::Cookie,
+        :expire_after => 2592000, #1 mês
+        :secret => 'eitagota!@#'
+
+    enable :allow_disabled_csrf
     ##
     # Caching support.
     #
@@ -60,5 +67,6 @@ module Socialscopeme
     #     render 'errors/500'
     #   end
     #
+
   end
 end

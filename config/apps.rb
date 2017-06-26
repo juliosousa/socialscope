@@ -31,8 +31,8 @@ Padrino.configure_apps do
   # set :protection, :except => :path_traversal
   # set :protect_from_csrf, true
 
-  set :protection, true
-  set :protect_from_csrf, true
+  set :protection, false
+  set :protect_from_csrf, false
   set :allow_disabled_csrf, true
 
   # controller

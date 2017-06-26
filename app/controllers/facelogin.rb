@@ -15,7 +15,6 @@ Socialscopeme::App.controllers :facelogin do
   get '/' do
     if session['access_token']
       'You are logged in! <a href="/logout">Logout</a>'
-
     else
       '<a href="/login">Login</a>'
     end

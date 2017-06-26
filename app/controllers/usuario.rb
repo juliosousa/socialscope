@@ -1,24 +1,5 @@
 Socialscopeme::App.controllers :usuario do
   
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
-
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
-
   get :'cadastro', :map => 'cadastro/' do
     render 'cadastro/cadastrar'
   end
@@ -30,7 +11,25 @@ Socialscopeme::App.controllers :usuario do
       @usuario = Usuario.new
       # ap session[:gclid]
       # session['oauth'] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "#{request.base_url}/callback")
-      render 'cadastro/entrar'
+      render 'cadastro/cadastrar'
+    end
+  end
+
+  post :create do
+
+    @usuario = Usuario.new(params)
+
+    @usuario.password = params['password']
+    @usuario.password_confirmation = params['password_confirmation']
+
+    @usuario.role = 'usuario'
+    if @usuario.save
+      set_current_account(@usuario)
+      flash[:success] = redirect(url(:base,:index))
+    else
+      ap 'deu ruim'
+      flash.now[:error] = pat(:create_error, model: 'usuario')
+      render 'cadastro/cadastrar'
     end
   end
 end
