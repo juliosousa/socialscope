@@ -9,17 +9,26 @@
   .section-content
     .section-content-inner
       .col-lg-8.col-lg-offset-2.text-center
-        %h1 Experimente
-        %hr.light/
-        %p Basta digitar ou colar uma URL de qualquer rede social e clicar em Get Social Scope
-        -# %form{:method => "post", :action => url(:fetch, :index)}
-        = form_tag url(:fetch,:index),:novalidate=>true do
-          =text_field_tag :url, :value => params[:url], :class => 'col-md-12 url', :required => true, :placeholder => "https://www.facebook.com/projetomedicina"
-          -# %input.col-md-12{:type => "url", :name => "page", :id => "page", :class => "url", :required => true, :placeholder => "https://www.facebook.com/projetomedicina"}
-          %br/
-          %br/
-          =submit_tag('Get Social Scope!', :class => 'btn btn-primary btn-xl page-scroll')
-          -# %button.page-scroll.btn.btn-default.btn-xl.sr-button{:type => "submit", :value => "page"} Get Social Scope!
+        -if current_account == nil
+          %h1 Experimente
+          %hr.light/
+          %p Basta digitar ou colar uma URL de qualquer página do Facebook e clicar em Get Social Scope!
+          = form_tag url(:fetch,:index),:novalidate=>true do
+            =text_field_tag :url, :value => params[:url], :class => 'col-md-12 url', :required => true, :placeholder => "https://www.facebook.com/projetomedicina"
+            %br/
+            %br/
+            =submit_tag('Get Social Scope!', :class => 'btn btn-primary btn-xl page-scroll')
+        -else
+          %h1 Social Scope!
+          %hr.light/
+          %p Basta digitar ou colar uma URL de qualquer página do Facebook e clicar em Get Social Scope!
+          = form_tag url(:fetch,:index),:novalidate=>true do
+            =text_field_tag :url, :value => params[:url], :class => 'col-md-12 url', :required => true, :placeholder => "https://www.facebook.com/projetomedicina"
+
+            %br/
+            %br/
+            =submit_tag('Get Social Scope!', :class => 'btn btn-primary btn-xl page-scroll')
+
 -#%section#services
 -#  .container
 -#    .row

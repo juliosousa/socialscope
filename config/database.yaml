@@ -24,17 +24,17 @@ development:
 
 
 
-production:
- clients: #Replace clients with sessions to work with Mongoid version 3.x or 4.x
-   default:
-     database: prod_projetoredacao
-     hosts:
-       - candidate.65.mongolayer.com:10272
-     options:
-       user: 'socialscope'
-       password: '98a*&ahhUU88&&'
- options:
-   raise_not_found_error: false
+#production:
+# clients: #Replace clients with sessions to work with Mongoid version 3.x or 4.x
+#   default:
+#     database: prod_projetoredacao
+#     hosts:
+#       - candidate.65.mongolayer.com:10272
+#     options:
+#       user: 'socialscope'
+#       password: '98a*&ahhUU88&&'
+# options:
+#   raise_not_found_error: false
 
 
 # test:

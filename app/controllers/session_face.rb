@@ -8,7 +8,7 @@ APP_ID     = 239153106570130
 # your app secret
 APP_SECRET = '39d6b381c413623b9f938e1d9af7f1d7'
 
-Socialscopeme::App.controllers :facelogin do
+Socialscopeme::App.controllers :session do
 
   use Rack::Session::Cookie, secret: 'PUT_A_GOOD_SECRET_IN_HERE'
 
@@ -20,14 +20,14 @@ Socialscopeme::App.controllers :facelogin do
     end
   end
 
-  get :login, :map => '/login' do
+  get :loginface, :map => '/login-face' do
     # generate a new oauth object with your app data and your callback url
     session['oauth'] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "#{request.base_url}")
     # redirect to facebook to get your code
     redirect session['oauth'].url_for_oauth_code()
   end
 
-  get '/logout' do
+  get '/logout-face' do
     session['oauth'] = nil
     session['access_token'] = nil
     redirect '/'
@@ -39,4 +39,6 @@ Socialscopeme::App.controllers :facelogin do
     session['access_token'] = session['oauth'].get_access_token(params[:code])
     redirect '/'
   end
+
+
 end

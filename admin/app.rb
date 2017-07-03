@@ -3,7 +3,7 @@ module Socialscopeme
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
-
+    enable :reload
     ##
     # Application configuration options
     #
@@ -23,7 +23,7 @@ module Socialscopeme
     set :admin_model, 'Account'
     set :login_page,  '/sessions/new'
 
-    enable  :sessions
+    enable :sessions
     disable :store_location
 
     access_control.roles_for :any do |role|

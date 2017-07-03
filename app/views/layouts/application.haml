@@ -28,34 +28,42 @@
             %span.sr-only Toggle navigation
             Menu
             %i.fa.fa-bars
-          %a.navbar-brand.page-scroll{:href => "#page-top"} Social Scope
+          %a.navbar-brand.page-scroll{:href => url(:base, :index)} Social Scope
+        =form_tag url(:session, :create), :novalidate=>true, :id => 'login' do
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav.navbar-right
+              -if current_account==nil && request.path_info == '/'
+                %li
+                  %a{:href => url(:usuario, :'cadastro')} Cadastrar
+                %li
+                  %a.page-scroll{:href => "#experimente"} Experimente
+                %li
+                  %a.page-scroll{:href => "#about"} Contato
+              -elsif current_account==nil && request.path_info != '/'
 
-
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right
-
-            %li
-              %a{:href => url(:usuario, :'cadastro')} Cadastrar
-            %li
-              %a{"data-target" => "#login-modal", "data-toggle" => "modal", :href => "#"} Login
-              #login-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :style => "display: none;", :tabindex => "-1"}
-                .modal-dialog
-                  .loginmodal-container
-                    %h1 Login to Your Account
-                    %br/
-                    %form
-                      %input{:name => "user", :placeholder => "Username", :type => "text"}/
-                      %input{:name => "pass", :placeholder => "Password", :type => "password"}/
-                      %input.login.loginmodal-submit{:name => "login", :type => "submit", :value => "Login"}/
-                    .login-help
-                      %a{:href => "#"} Register
-                      \-
-                      %a{:href => "#"} Forgot Password
-            %li
-              %a.page-scroll{:href => "#experimente"} Experimente
-            %li
-              %a.page-scroll{:href => "#about"} Contato
+              -else
+                %li
+                  %a.page-scroll{:href => "#experimente"} Escopar!
+              -if current_account!=nil
+                %li
+                  %a.page-scroll{:href => url(:session, :destroy)} Logout
+                  -ap current_account
+              -else
+                %li
+                  %a{"data-target" => "#login-modal", "data-toggle" => "modal", :href => "#"} Login
+                  #login-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :style => "display: none;", :tabindex => "-1"}
+                    .modal-dialog
+                      .loginmodal-container
+                        %h1 Faça login em sua conta
+                        %br/
+                        %form
+                          %input{:name => "user", :placeholder => "Username", :type => "text"}/
+                          %input{:name => "pass", :placeholder => "Password", :type => "password"}/
+                          =submit_tag('Efetuar login', :class => 'btn btn-submit', :style=>"text-align: center; padding-left: 17px")
+                          -ap current_account
+                          -#%input.login.loginmodal-submit{:name => "login", :type => "submit", :value => "Login"}/
+                        .login-help
+                          %a{:href => url(:usuario, :'cadastro')} Cadastre-se
 
     =yield
 
@@ -66,23 +74,11 @@
             %h1.section-heading Fale conosco
             %hr.primary/
             %p
-          -#.col-lg-4.col-lg-offset-2.text-center
-          -#  %i.fa.fa-phone.fa-3x.sr-contact
-          -#  %p 123-456-6789
           .col-lg-12.text-center
             %i.fa.fa-envelope-o.fa-3x.sr-contact
             %p
               %a{:href => "mailto:sociable@socialscopeme"} sociable@socialscopeme.com
-    / jQuery
-    -# %script{:src => "vendor/jquery/jquery.min.js"}
-    / Bootstrap Core JavaScript
-    -# %script{:src => "vendor/bootstrap/js/bootstrap.min.js"}
-    / Plugin JavaScript
 
-    -# %script{:src => "vendor/scrollreveal/scrollreveal.min.js"}
-    -# %script{:src => "vendor/magnific-popup/jquery.magnific-popup.min.js"}
-    / Theme JavaScript
-    -# %script{:src => "js/creative.min.js"}
 
     =javascript_include_tag 'jquery.min', 'bootstrap.min', 'scrollreveal.min', 'jquery.magnific-popup.min', 'creative.min'
 

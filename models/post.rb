@@ -6,6 +6,9 @@ class Post
 
   field :url, :type => String
   field :description, :type => String
+  field :likes, :type => Integer
+  field :comments, :type => Integer
+  field :shares, :type => Integer
   
 
   # You can define indexes on documents using the index macro:

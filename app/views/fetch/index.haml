@@ -1,0 +1,31 @@
+!!!
+%html{:lang => "en"}
+
+  %head
+    =stylesheet_link_tag 'bootstrap.min', 'font-awesome.min', 'magnific-popup', 'creative.min','fetch'
+    %br
+    %br
+  %body
+    %br
+    .panel.panel-primary
+      .panel-heading
+        %h4.panel-title
+          Resultado SocialScope
+      .panel-body
+        %table.table
+          %thead
+            %tr
+              %th Link
+              %th Likes
+              %th Comentários
+          %tbody
+            -@posts.each do |post|
+              -if post
+                %tr
+                  %td
+                    %a{:href => post['link']}
+                      =post['link']
+                  %td
+                    =post['likes']['summary']['total_count']
+                  %td
+                    =post['comments']['summary']['total_count']

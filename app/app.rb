@@ -1,16 +1,19 @@
 module Socialscopeme
   class App < Padrino::Application
+    register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
 
-
+    use Rack::Deflater
+    Haml::Options.defaults[:ugly] = true
 
     use Rack::Session::Cookie,
         :expire_after => 2592000, #1 mês
         :secret => 'eitagota!@#'
 
     enable :allow_disabled_csrf
+    enable :sessions
     ##
     # Caching support.
     #
